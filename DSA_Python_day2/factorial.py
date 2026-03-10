@@ -26,6 +26,42 @@ for i in range(1, 11):
 
 
 #fibonacci series
+n = int(input("Enter the number of terms:"))
+a, b = 0, 1
+print("Fibonacci sequence:")
+for i in range(n):
+    print(a, end=' ')
+    a, b = b, a + b
+
 #armstrong number
+num = int(input("Enter a number:"))
+order = len(str(num))
+sum = 0
+temp = num
+while temp > 0:
+    digit = temp % 10
+    sum += digit ** order
+    temp //= 10
+if num == sum:
+    print(num, "is an Armstrong number.")
+else:
+    print(num, "is not an Armstrong number.")   
 #prime number
+num = int(input("Enter a number:"))
+if num > 1:
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            print(num, "is not a prime number.")
+            break
+    else:
+        print(num, "is a prime number.")
+else:
+    print(num, "is not a prime number.")
+
 #palindrome number or string
+s = input("Enter a string or number:")
+if s == s[::-1]:
+    print(s, "is a palindrome.")
+else:
+    print(s, "is not a palindrome.")
+    
